@@ -1,7 +1,7 @@
 import gymnasium as gym
 import numpy as np
 
-from dqnALE import DQNAgent
+from dqnLL import DQNAgent
 
 import matplotlib.pyplot as plt
 import torch

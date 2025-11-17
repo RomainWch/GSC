@@ -20,6 +20,7 @@ source .venv/bin/activate
 
 ```bash
 pip install --extra-index-url https://download.pytorch.org/whl/cpu -r requirements.txt
+# l'installation peut mettre un peu de temps
 ```
 
 si l'installation de box2d échoue essayez :
@@ -27,6 +28,12 @@ si l'installation de box2d échoue essayez :
 ```bash
 sudo apt install -y swig python3-dev build-essential
 pip install "gymnasium[box2d]"
+```
+
+puis relancer : 
+```bash
+pip install --extra-index-url https://download.pytorch.org/whl/cpu -r requirements.txt
+# l'installation peut mettre un peu de temps
 ```
 
 ## Lancer l'entraînement
@@ -55,9 +62,23 @@ Pour l'apprentissage d'un jeu Atari il n'y a pas de render lors de l'apprentissa
 ```bash
 # depuis la racine du dépôt (où se trouve `play_policy.py`)
 python3 play_policy.py policies/policiesName.pth 
-
 ```
+
 avec :
 --env ALE/Pong-v5 pour pong, ALE/Breakout-v5 pour le casse brique ou LunarLander-v3 pour LunarLander (par défaut : ALE/Pong-v5)
 --episodes suivi du nombre d'episodes à jouer (par défaut : 5)
 --no-render pour ne pas afficher le jeu, ne rien mettre pour l'afficher
+
+Exemples : 
+
+- Pour LunarLander
+```bash
+# depuis la racine du dépôt (où se trouve `play_policy.py`)
+python3 play_policy.py policies/lunar_test_numero_43_avg263_ep900.pth --env LunarLander-v3 --episodes 3 
+```
+
+- Pour Pong
+```bash
+# depuis la racine du dépôt (où se trouve `play_policy.py`)
+python3 play_policy.py policies/Pong_test_numero_2_avg-9_ep1200.pth --env ALE/Pong-v5 --episodes 3
+```

@@ -178,7 +178,7 @@ def _cli():
     p.add_argument("policy", help=".pth policy file to load")
     p.add_argument("--env", default="ALE/Pong-v5", help="Gym env name")
     p.add_argument("--episodes", type=int, default=5)
-    p.add_argument("--no-render", dest="render", action="render_false")
+    p.add_argument("--no-render", dest="render", action="store_false")
     args = p.parse_args()
 
     play_policy(args.policy, env_name=args.env, episodes=args.episodes, render=args.render)
