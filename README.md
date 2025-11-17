@@ -65,9 +65,9 @@ python3 play_policy.py policies/policiesName.pth
 ```
 
 avec :
---env ALE/Pong-v5 pour pong, ALE/Breakout-v5 pour le casse brique ou LunarLander-v3 pour LunarLander (par défaut : ALE/Pong-v5)
---episodes suivi du nombre d'episodes à jouer (par défaut : 5)
---no-render pour ne pas afficher le jeu, ne rien mettre pour l'afficher
+- --env ALE/Pong-v5 pour pong, ALE/Breakout-v5 pour le casse brique ou LunarLander-v3 pour LunarLander (par défaut : ALE/Pong-v5)
+- --episodes suivi du nombre d'episodes à jouer (par défaut : 5)
+- --no-render pour ne pas afficher le jeu, ne rien mettre pour l'afficher
 
 Exemples : 
 
