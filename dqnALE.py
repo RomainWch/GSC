@@ -38,7 +38,7 @@ class DQNAgent:
         self.action_dim = env.action_space.n
         
         self.q_network = DQN(self.state_dim, self.action_dim)
-        self.optimizer = optim.RMSprop(self.q_network.parameters(), lr=alpha)
+        self.optimizer = optim.AdamW(self.q_network.parameters(), lr=alpha)
         self.loss_fn = nn.HuberLoss()
 
         self.buffer_size = buffer_size  # N
@@ -101,7 +101,7 @@ class DQNAgent:
         self.optimizer.step()
         
         self.target_update_counter += 1
-        self.sampler.beta = min(1.0, self.sampler.beta + 0.001)
+        self.sampler.beta = min(1.0, self.sampler.beta + 1/ self.epsilon_decay_steps)
         if self.target_update_counter % self.target_update_freq == 0:
             self.target_network.load_state_dict(self.q_network.state_dict())
             

@@ -45,9 +45,9 @@ agent = DQNAgent(
     alpha=0.0001,
     beta=0.4,
     epsilon=1.0,
-    epsilon_decay_steps=2000000,
+    epsilon_decay_steps=3000000,
     min_epsilon=0.01,
-    target_update_freq=5000,
+    target_update_freq=1000,
     buffer_size=500000,
     batch_size=64,
 )
